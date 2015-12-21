@@ -25,6 +25,14 @@ lazy val click = taskKey[Unit]("Symbolically running Template.click")
 
 fullRunTask(click, Compile, "org.change.v2.runners.experiments.TemplateRunner")
 
+lazy val dhcpclient = taskKey[Unit]("Symbolically running DHCPClient.click")
+
+fullRunTask(dhcpclient, Compile, "org.change.v2.runners.experiments.DHCPClientRunner")
+
+lazy val dhcpserver = taskKey[Unit]("Symbolically running DHCPServer.click")
+
+fullRunTask(dhcpserver, Compile, "org.change.v2.runners.experiments.DHCPServerRunner")
+
 lazy val click_exampl = taskKey[Unit]("Symbolically running TemplateExampl.click with example generation")
 
 fullRunTask(click_exampl, Compile, "org.change.v2.runners.experiments.TemplateRunnerWithExamples")
