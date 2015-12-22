@@ -23,13 +23,14 @@ class EtherEncap(name: String,
 
   override def instructions: Map[LocationId, Instruction] = Map(
     inputPortName(0) -> InstructionBlock(
-      CreateTag("L2",Tag("L3")-112),
+      CreateTag("L2",Tag("L3")-1000),
       Allocate(Tag("L2")+EtherSrcOffset,48),
       Assign(Tag("L2")+EtherSrcOffset,ConstantValue(macToNumberCiscoFormat(configParams(1).value))),
       Allocate(Tag("L2")+EtherDstOffset,48),
       Assign(Tag("L2")+EtherDstOffset,ConstantValue(macToNumberCiscoFormat(configParams(2).value))),
       Allocate(Tag("L2")+EtherTypeOffset,16),
       Assign(Tag("L2")+EtherTypeOffset,ConstantValue(configParams(0).value.toInt)),
+      CreateTag("START", Tag("L3")-48),
       Forward(outputPortName(0))
     )
   )
