@@ -43,6 +43,16 @@ object BuilderFactory {
     case "ScanTCPOptions"  => ScanTCPOptions.getBuilder(nameValue)
     //    case "IPFilter"  => IPFilter.getBuilder(nameValue)
     case "Paint" => Paint.getBuilder(nameValue)
+    case "CheckDHCPMsg"  => CheckDHCPMsg.getBuilder(nameValue)
+    case "DHCPClassifier"  => DHCPClassifier.getBuilder(nameValue)
+    case "DHCPClient"  => DHCPClient.getBuilder(nameValue)
+    case "DHCPICMPEncap"  => DHCPICMPEncap.getBuilder(nameValue)
+    case "DHCPLeaseHash"  => DHCPLeaseHash.getBuilder(nameValue)
+    case "DHCPLeasePool"  => DHCPLeasePool.getBuilder(nameValue)
+    case "DHCPServerACKorNAK"  => DHCPServerACKorNAK.getBuilder(nameValue)
+    case "DHCPServerOffer"  => DHCPServerOffer.getBuilder(nameValue)
+    case "DHCPServerRelease"  => DHCPServerRelease.getBuilder(nameValue)
+    case "UDPIPEncap"  => UDPIPEncap.getBuilder(nameValue)
     case _ => NoOpClickElm.getBuilder(nameValue, elementType)
   }
   def getBuilder(elementType: String) = elementType match {
@@ -83,6 +93,16 @@ object BuilderFactory {
     case "ScanTCPOptions"  => ScanTCPOptions.getBuilder
 //    case "IPFilter"  => IPFilter.getBuilder
     case "Paint"  => Paint.getBuilder
+    case "CheckDHCPMsg"  => CheckDHCPMsg.getBuilder
+    case "DHCPClassifier"  => DHCPClassifier.getBuilder
+    case "DHCPClient"  => DHCPClient.getBuilder
+    case "DHCPICMPEncap"  => DHCPICMPEncap.getBuilder
+    case "DHCPLeaseHash"  => DHCPLeaseHash.getBuilder
+    case "DHCPLeasePool"  => DHCPLeasePool.getBuilder
+    case "DHCPServerACKorNAK"  => DHCPServerACKorNAK.getBuilder
+    case "DHCPServerOffer"  => DHCPServerOffer.getBuilder
+    case "DHCPServerRelease"  => DHCPServerRelease.getBuilder
+    case "UDPIPEncap"  => UDPIPEncap.getBuilder
     case _ => NoOpClickElm.getBuilder(elementType)
   }
 }
