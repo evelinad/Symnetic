@@ -14,6 +14,7 @@ package object canonicalnames {
   val L2Tag = Tag("L2")
   val L3Tag = Tag("L3")
   val L4Tag = Tag("L4")
+  val L5Tag = Tag("L5")
 
   val IPVersionString = "IP-Version"
   val IPSrcString = "IP-Src"
@@ -57,7 +58,7 @@ package object canonicalnames {
   val IPFlagsOffset = 48
   val IPFlags = L3Tag + IPFlagsOffset
   val FragmentOffsetOffset = 51
-  val FragmentOfset = L3Tag + FragmentOffsetOffset
+  val FragmentOffset = L3Tag + FragmentOffsetOffset
   val TTLOffset = 64
   val TTL = L3Tag + TTLOffset
   val ProtoOffset = 72
@@ -147,6 +148,41 @@ package object canonicalnames {
   val ARPProtoSender = L3Tag + 112
   val ARPHWReceiver = L3Tag + 368
   val ARPProtoReceiver = L3Tag + 416
+
+  //DHCP Header
+  val OPCodeOffset = 0
+  val OPCode = L5Tag
+  val HwTypeOffset = 8
+  val HwType = L5Tag + HwTypeOffset
+  val HwAlOffset = 16
+  val HwAl = L5Tag + HwAlOffset
+  val HopCOffset = 24
+  val HopC = L5Tag + HopCOffset
+  val TrIDOffset = 32
+  val TrID = L5Tag + TrIDOffset
+  val NrSecOffset = 64
+  val NrSec = L5Tag + NrSecOffset
+  val FlagsOffset = 80
+  val Flags = L5Tag + FlagsOffset
+  val ClientIPOffset = 96
+  val ClientIP = L5Tag + ClientIPOffset
+  val YourIPOffset = 128
+  val YourIP = L5Tag + YourIPOffset
+  val ServerIPOffset = 160
+  val ServerIP = L5Tag + ServerIPOffset
+  val GwIPOffset = 192
+  val GwIP = L5Tag + GwIPOffset
+  val ClientHwAddrOffset = 224
+  val ClientHwAddr = L5Tag + ClientHwAddrOffset
+  val SrvHostNameOffset = 352
+  val SrvHostName = L5Tag + SrvHostNameOffset
+  val BootFnOffset = 864
+  val BootFn = L5Tag + BootFnOffset
+  val MagicOffset = 1888
+  val Magic = L5Tag + MagicOffset
+  // Option 53
+  val OptionsOffset = 1920
+  val Options = L5Tag + OptionsOffset
 
   val MinPacketSize = 64
 }

@@ -34,77 +34,165 @@ object State {
 
    val afterBigBang = InstructionBlock (
      CreateTag("START",0),
-     CreateTag("L3", 0),
+
+     CreateTag("L2", 0),
+
+     Allocate(EtherDst, 48),
+     Assign(EtherDst, SymbolicValue()),
+
+     Allocate(EtherSrc, 48),
+     Assign(EtherSrc, SymbolicValue()),
+
+     Allocate(EtherType, 16),
+     Assign(EtherType, SymbolicValue()),
+
+     Allocate(PCP, 3),
+     Assign(PCP, SymbolicValue()),
+
+     Allocate(DEI, 1),
+     Assign(DEI, SymbolicValue()),
+
+     Allocate(VLANTag, 12),
+     Assign(VLANTag, SymbolicValue()),
+
+     //CreateTag("L3", 0),
+     CreateTag("L3", L2Tag + 160),
 
      Allocate(IPVersion, 4),
      Assign(IPVersion, SymbolicValue()),
 
-     Allocate(Proto, 8),
-     Assign(Proto, SymbolicValue()),
-
-     Allocate(IPSrc, 32),
-     Assign(IPSrc, SymbolicValue()),
-     Allocate(IPDst, 32),
-     Assign(IPDst, SymbolicValue()),
-
-     Allocate(TTL, 8),
-     Assign(TTL, ConstantValue(255)),
-
-     Allocate(IPLength, 16),
-     Assign(IPLength, SymbolicValue()),
-
-     Allocate(IPHeaderLength, 4),
-     Assign(IPHeaderLength, SymbolicValue()),
-
-     Allocate(HeaderChecksum,16),
-     Assign(HeaderChecksum, SymbolicValue()),
-
-     Allocate(IPID, 16),
-     Assign(IPID, SymbolicValue()),
+     Allocate(Tag("L3") + IPHeaderLengthOffset, 4),
+     Assign(Tag("L3") + IPHeaderLengthOffset, SymbolicValue()),
+     Allocate(Tag("L3") + DSCPOffset, 6),
+     Assign(Tag("L3") + DSCPOffset, SymbolicValue()),
+     Allocate(Tag("L3") + ECNOffset, 2),
+     Assign(Tag("L3") + ECNOffset, SymbolicValue()),
+     Allocate(Tag("L3") + IPLengthOffset, 16),
+     Assign(Tag("L3") + IPLengthOffset, ConstantValue(255)),
+     Allocate(Tag("L3") + IPIDOffset, 16),
+     Assign(Tag("L3") + IPIDOffset, SymbolicValue()),
+     Allocate(Tag("L3") + IPFlagsOffset, 3),
+     Assign(Tag("L3") + IPFlagsOffset, SymbolicValue()),
+     Allocate(Tag("L3") + FragmentOffsetOffset,13),
+     Assign(Tag("L3") + FragmentOffsetOffset, SymbolicValue()),
+     Allocate(Tag("L3") + TTLOffset, 8),
+     Assign(Tag("L3") + TTLOffset, SymbolicValue()),
+     Allocate(Tag("L3") + ProtoOffset, 8),
+     Assign(Tag("L3") + ProtoOffset, SymbolicValue()),
+     Allocate(Tag("L3") + HeaderChecksumOffset, 16),
+     Assign(Tag("L3") + HeaderChecksumOffset, SymbolicValue()),
+      Allocate(Tag("L3") + IPSrcOffset, 32),
+     Assign(Tag("L3") + IPSrcOffset, SymbolicValue()),
+     Allocate(Tag("L3") + IPDstOffset, 32),
+     Assign(Tag("L3") + IPDstOffset, SymbolicValue()),
 
      CreateTag("L4", L3Tag + 160),
 
-     Allocate(TcpSrc, 16),
-     Assign(TcpSrc, SymbolicValue()),
+    // 67 and 68 ?
+     Allocate(UDPSrc, 16),
+     Assign(UDPSrc, SymbolicValue()),
 
-     Allocate(TcpDst, 16),
-     Assign(TcpDst, SymbolicValue()),
+     Allocate(UDPDst, 16),
+     Assign(UDPDst, SymbolicValue()),
 
-     Allocate(TcpSeq, 32),
-     Assign(TcpSeq, SymbolicValue()),
+     Allocate(UDPLength, 16),
+     Assign(UDPLength, SymbolicValue()),
 
-     Allocate(TcpAck, 32),
-     Assign(TcpAck, SymbolicValue()),
+     Allocate(UDPChecksum, 16),
+     Assign(UDPChecksum, SymbolicValue()),
 
-     Allocate(TcpDataOffset, 4),
-     Assign(TcpDataOffset, ConstantValue(160)),
+     //Allocate(TcpSrc, 16),
+     //Assign(TcpSrc, SymbolicValue()),
 
-     Allocate(TcpReserved,3),
-     Assign(TcpReserved,SymbolicValue()),
+     //Allocate(TcpDst, 16),
+     //Assign(TcpDst, SymbolicValue()),
 
-     Allocate(TcpFlagNS,1),
-     Assign(TcpFlagNS,ConstantValue(0)),
-     Allocate(TcpFlagCWR,1),
-     Assign(TcpFlagCWR,ConstantValue(0)),
-     Allocate(TcpFlagECE,1),
-     Assign(TcpFlagECE,ConstantValue(0)),
-     Allocate(TcpFlagURG,1),
-     Assign(TcpFlagURG,ConstantValue(0)),
-     Allocate(TcpFlagACK,1),
-     Assign(TcpFlagACK,SymbolicValue()),
-     Allocate(TcpFlagACK,1),
-     Assign(TcpFlagACK,SymbolicValue()),
-     Allocate(TcpFlagSYN,1),
-     Assign(TcpFlagSYN,SymbolicValue()),
-     Allocate(TcpFlagRST,1),
-     Assign(TcpFlagRST,ConstantValue(0)),
-     Allocate(TcpFlagPSH,1),
-     Assign(TcpFlagPSH,ConstantValue(0)),
+     //Allocate(TcpSeq, 32),
+     //Assign(TcpSeq, SymbolicValue()),
+
+     //Allocate(TcpAck, 32),
+     //Assign(TcpAck, SymbolicValue()),
+
+     //Allocate(TcpDataOffset, 4),
+     //Assign(TcpDataOffset, ConstantValue(160)),
+
+     //Allocate(TcpReserved,3),
+     //Assign(TcpReserved,SymbolicValue()),
+
+     //Allocate(TcpFlagNS,1),
+     //Assign(TcpFlagNS,ConstantValue(0)),
+     //Allocate(TcpFlagCWR,1),
+     //Assign(TcpFlagCWR,ConstantValue(0)),
+     //Allocate(TcpFlagECE,1),
+     //Assign(TcpFlagECE,ConstantValue(0)),
+     //Allocate(TcpFlagURG,1),
+     //Assign(TcpFlagURG,ConstantValue(0)),
+     //Allocate(TcpFlagACK,1),
+     //Assign(TcpFlagACK,SymbolicValue()),
+     //Allocate(TcpFlagACK,1),
+     //Assign(TcpFlagACK,SymbolicValue()),
+     //Allocate(TcpFlagSYN,1),
+     //Assign(TcpFlagSYN,SymbolicValue()),
+     //Allocate(TcpFlagRST,1),
+     //Assign(TcpFlagRST,ConstantValue(0)),
+     //Allocate(TcpFlagPSH,1),
+     //Assign(TcpFlagPSH,ConstantValue(0)),
 
      //CreateTag("PAYLOAD", :+:(L4Tag,:@(TcpDataOffset)),
      //Allocate(Tag("PAYLOAD"),12000),
      //Assign(Tag("PAYLOAD"),SymbolicValue()),
-     CreateTag("END", L4Tag + 12000)
+     CreateTag("L5", L4Tag + 64),
+
+     Allocate(OPCode, 8),
+     Assign(OPCode, ConstantValue(1)),
+
+     Allocate(HwType, 8),
+     Assign(HwType, ConstantValue(1)),
+
+     Allocate(HwAl, 8),
+     Assign(HwAl, ConstantValue(6)),
+
+     Allocate(HopC, 8),
+     Assign(HopC, ConstantValue(0)),
+
+     Allocate(TrID, 32),
+     Assign(TrID, SymbolicValue()),
+
+     Allocate(NrSec, 16),
+     Assign(NrSec, ConstantValue(0)),
+
+     Allocate(Flags, 16),
+     Assign(Flags, ConstantValue(0)),
+
+     Allocate(ClientIP, 32),
+     Assign(ClientIP, ConstantValue(0)),
+
+     Allocate(YourIP, 32),
+     Assign(YourIP, ConstantValue(0)),
+
+     Allocate(ServerIP, 32),
+     Assign(ServerIP, ConstantValue(0)),
+
+     Allocate(GwIP, 32),
+     Assign(GwIP, ConstantValue(0)),
+
+     Allocate(ClientHwAddr, 128),
+     Assign(ClientHwAddr, SymbolicValue()),
+
+     Allocate(SrvHostName, 512),
+     Assign(SrvHostName, SymbolicValue()),
+
+     Allocate(BootFn, 1024),
+     Assign(BootFn, SymbolicValue()),
+
+     Allocate(Magic, 32),
+     Assign(Magic, ConstantValue(1666417251)),
+
+     Allocate(Options, 32),
+     Assign(Options, ConstantValue(1)),
+
+     //CreateTag("END", L4Tag + 12000)
+     CreateTag("END", L5Tag + 12000)
    )(bigBang, true)
 
    afterBigBang._1.head
