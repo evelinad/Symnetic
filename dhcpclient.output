@@ -1,0 +1,822 @@
+Ok states (0):
+
+Stuck states (1):
+State #0
+
+Forward(fromDevice-0-out)
+CreateTag(L5,+0)
+AllocateRaw(L5,8)
+AssignRaw(L5,[Constant 1],GenericNumeric)
+AllocateRaw(L5+8,8)
+AssignRaw(L5+8,[Constant 1],GenericNumeric)
+AllocateRaw(L5+16,8)
+AssignRaw(L5+16,[Constant 6],GenericNumeric)
+AllocateRaw(L5+24,8)
+AssignRaw(L5+24,[Constant 0],GenericNumeric)
+AllocateRaw(L5+32,32)
+AssignRaw(L5+32,[Symbolic #-781894856755079923],GenericNumeric)
+AllocateRaw(L5+64,16)
+AssignRaw(L5+64,[Constant 0],GenericNumeric)
+AllocateRaw(L5+80,16)
+AssignRaw(L5+80,[Constant 0],GenericNumeric)
+AllocateRaw(L5+96,32)
+AssignRaw(L5+96,[Constant 0],GenericNumeric)
+AllocateRaw(L5+128,32)
+AssignRaw(L5+128,[Constant 0],GenericNumeric)
+AllocateRaw(L5+160,32)
+AssignRaw(L5+160,[Constant 0],GenericNumeric)
+AllocateRaw(L5+192,32)
+AssignRaw(L5+192,[Constant 0],GenericNumeric)
+AllocateRaw(L5+224,128)
+AssignRaw(L5+224,[Symbolic #-5708768150566841880],GenericNumeric)
+AllocateRaw(L5+352,512)
+AssignRaw(L5+352,[Symbolic #1868980453582860699],GenericNumeric)
+AllocateRaw(L5+864,1024)
+AssignRaw(L5+864,[Symbolic #7547979100121106446],GenericNumeric)
+AllocateRaw(L5+1888,32)
+AssignRaw(L5+1888,[Constant 1666417251],GenericNumeric)
+AllocateRaw(L5+1920,32)
+AssignRaw(L5+1920,[Constant 1],GenericNumeric)
+CreateTag(END,L5+12000)
+Forward(client-0-out)
+ConstrainRaw(L5+1888,:==:([Constant 1666417251]),Some(==([Constant 1666417251])))
+Forward(checkdhcp-0-0-out)
+CreateTag(L4,L5--64)
+AllocateRaw(L4+0,16)
+AssignRaw(L4+0,[Constant 68],GenericNumeric)
+AllocateRaw(L4+16,16)
+AssignRaw(L4+16,[Constant 67],GenericNumeric)
+AllocateRaw(L4+32,16)
+AssignRaw(L4+32,[Symbolic #-7134822539640507557],GenericNumeric)
+AllocateRaw(L4+48,16)
+AssignRaw(L4+48,[Symbolic #-3660934894575875893],GenericNumeric)
+CreateTag(L3,L4--160)
+AllocateRaw(L3+0,4)
+AssignRaw(L3+0,[Symbolic #7776003313829591680],GenericNumeric)
+AllocateRaw(L3+4,4)
+AssignRaw(L3+4,[Symbolic #2482471272490704694],GenericNumeric)
+AllocateRaw(L3+8,6)
+AssignRaw(L3+8,[Symbolic #-2237583132686246167],GenericNumeric)
+AllocateRaw(L3+14,2)
+AssignRaw(L3+14,[Symbolic #-2032183889573389411],GenericNumeric)
+AllocateRaw(L3+16,16)
+AssignRaw(L3+16,[Constant 255],GenericNumeric)
+AllocateRaw(L3+32,16)
+AssignRaw(L3+32,[Symbolic #1992314052581831831],GenericNumeric)
+AllocateRaw(L3+48,3)
+AssignRaw(L3+48,[Symbolic #7747835900676396969],GenericNumeric)
+AllocateRaw(L3+51,13)
+AssignRaw(L3+51,[Symbolic #-3643148760131868943],GenericNumeric)
+AllocateRaw(L3+64,8)
+AssignRaw(L3+64,[Symbolic #-1217724498402922792],GenericNumeric)
+AllocateRaw(L3+72,8)
+AssignRaw(L3+72,[Symbolic #-2639987639962871323],GenericNumeric)
+AllocateRaw(L3+80,16)
+AssignRaw(L3+80,[Symbolic #-5982342683971994010],GenericNumeric)
+AllocateRaw(L3+96,32)
+AssignRaw(L3+96,[Constant 4294967295],GenericNumeric)
+AllocateRaw(L3+128,32)
+AssignRaw(L3+128,[Constant 4294967295],GenericNumeric)
+Forward(udp_encap-0-out)
+CreateTag(L2,L3--1000)
+AllocateRaw(L2+48,48)
+AssignRaw(L2+48,[Constant 844442110328838],GenericNumeric)
+AllocateRaw(L2+0,48)
+AssignRaw(L2+0,[Constant 71777214294589695],GenericNumeric)
+AllocateRaw(L2+96,16)
+AssignRaw(L2+96,[Constant 800],GenericNumeric)
+CreateTag(START,L3--48)
+Forward(eth_encap-out)
+Forward(toDevice-0-out)
+
+Path (OK) {
+Tags:L5 -> 0
+L4 -> -64
+START -> -272
+L3 -> -224
+END -> 12000
+L2 -> -1224Memory values:
+-32 -> (Crt:Some(Value {
+Expression: [Symbolic #-7134822539640507557]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #-7134822539640507557]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-64 -> (Crt:Some(Value {
+Expression: [Constant 68]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 68]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+0 -> (Crt:Some(Value {
+Expression: [Constant 1]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 1]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+352 -> (Crt:Some(Value {
+Expression: [Symbolic #1868980453582860699]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #1868980453582860699]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-128 -> (Crt:Some(Value {
+Expression: [Constant 4294967295]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 4294967295]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+24 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-96 -> (Crt:Some(Value {
+Expression: [Constant 4294967295]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 4294967295]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-1176 -> (Crt:Some(Value {
+Expression: [Constant 844442110328838]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 844442110328838]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-224 -> (Crt:Some(Value {
+Expression: [Symbolic #7776003313829591680]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #7776003313829591680]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-160 -> (Crt:Some(Value {
+Expression: [Symbolic #-1217724498402922792]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #-1217724498402922792]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-192 -> (Crt:Some(Value {
+Expression: [Symbolic #1992314052581831831]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #1992314052581831831]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+160 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+192 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+1920 -> (Crt:Some(Value {
+Expression: [Constant 1]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 1]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+1888 -> (Crt:Some(Value {
+Expression: [Constant 1666417251]
+Type: GenericNumeric
+Constraints:
+	 ==([Constant 1666417251])
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 1666417251]
+Type: GenericNumeric
+Constraints:
+	 ==([Constant 1666417251])
+} End Of Value Desc
+))
+224 -> (Crt:Some(Value {
+Expression: [Symbolic #-5708768150566841880]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #-5708768150566841880]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+96 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+128 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-1224 -> (Crt:Some(Value {
+Expression: [Constant 71777214294589695]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 71777214294589695]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-210 -> (Crt:Some(Value {
+Expression: [Symbolic #-2032183889573389411]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #-2032183889573389411]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+32 -> (Crt:Some(Value {
+Expression: [Symbolic #-781894856755079923]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #-781894856755079923]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+64 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+80 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-1128 -> (Crt:Some(Value {
+Expression: [Constant 800]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 800]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+16 -> (Crt:Some(Value {
+Expression: [Constant 6]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 6]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+864 -> (Crt:Some(Value {
+Expression: [Symbolic #7547979100121106446]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #7547979100121106446]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-16 -> (Crt:Some(Value {
+Expression: [Symbolic #-3660934894575875893]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #-3660934894575875893]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-48 -> (Crt:Some(Value {
+Expression: [Constant 67]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 67]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-216 -> (Crt:Some(Value {
+Expression: [Symbolic #-2237583132686246167]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #-2237583132686246167]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-152 -> (Crt:Some(Value {
+Expression: [Symbolic #-2639987639962871323]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #-2639987639962871323]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+8 -> (Crt:Some(Value {
+Expression: [Constant 1]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 1]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-173 -> (Crt:Some(Value {
+Expression: [Symbolic #-3643148760131868943]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #-3643148760131868943]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-208 -> (Crt:Some(Value {
+Expression: [Constant 255]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 255]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-176 -> (Crt:Some(Value {
+Expression: [Symbolic #7747835900676396969]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #7747835900676396969]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-144 -> (Crt:Some(Value {
+Expression: [Symbolic #-5982342683971994010]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #-5982342683971994010]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+-220 -> (Crt:Some(Value {
+Expression: [Symbolic #2482471272490704694]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #2482471272490704694]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+
+} End Of Path Desc
+Failed states (1): 
+State #0
+
+Forward(fromDevice-0-out)
+CreateTag(L5,+0)
+AllocateRaw(L5,8)
+AssignRaw(L5,[Constant 1],GenericNumeric)
+AllocateRaw(L5+8,8)
+AssignRaw(L5+8,[Constant 1],GenericNumeric)
+AllocateRaw(L5+16,8)
+AssignRaw(L5+16,[Constant 6],GenericNumeric)
+AllocateRaw(L5+24,8)
+AssignRaw(L5+24,[Constant 0],GenericNumeric)
+AllocateRaw(L5+32,32)
+AssignRaw(L5+32,[Symbolic #-781894856755079923],GenericNumeric)
+AllocateRaw(L5+64,16)
+AssignRaw(L5+64,[Constant 0],GenericNumeric)
+AllocateRaw(L5+80,16)
+AssignRaw(L5+80,[Constant 0],GenericNumeric)
+AllocateRaw(L5+96,32)
+AssignRaw(L5+96,[Constant 0],GenericNumeric)
+AllocateRaw(L5+128,32)
+AssignRaw(L5+128,[Constant 0],GenericNumeric)
+AllocateRaw(L5+160,32)
+AssignRaw(L5+160,[Constant 0],GenericNumeric)
+AllocateRaw(L5+192,32)
+AssignRaw(L5+192,[Constant 0],GenericNumeric)
+AllocateRaw(L5+224,128)
+AssignRaw(L5+224,[Symbolic #-5708768150566841880],GenericNumeric)
+AllocateRaw(L5+352,512)
+AssignRaw(L5+352,[Symbolic #1868980453582860699],GenericNumeric)
+AllocateRaw(L5+864,1024)
+AssignRaw(L5+864,[Symbolic #7547979100121106446],GenericNumeric)
+AllocateRaw(L5+1888,32)
+AssignRaw(L5+1888,[Constant 1666417251],GenericNumeric)
+AllocateRaw(L5+1920,32)
+AssignRaw(L5+1920,[Constant 1],GenericNumeric)
+CreateTag(END,L5+12000)
+Forward(client-0-out)
+ConstrainRaw(L5+1888,:~:(:==:([Constant 1666417251])),Some(~(==([Constant 1666417251]))))
+
+Path (Memory object @ L5+1888 cannot :~:(:==:([Constant 1666417251]))) {
+Tags:L5 -> 0
+END -> 12000Memory values:
+0 -> (Crt:Some(Value {
+Expression: [Constant 1]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 1]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+352 -> (Crt:Some(Value {
+Expression: [Symbolic #1868980453582860699]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #1868980453582860699]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+24 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+160 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+192 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+1920 -> (Crt:Some(Value {
+Expression: [Constant 1]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 1]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+1888 -> (Crt:Some(Value {
+Expression: [Constant 1666417251]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 1666417251]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+224 -> (Crt:Some(Value {
+Expression: [Symbolic #-5708768150566841880]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #-5708768150566841880]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+96 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+128 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+32 -> (Crt:Some(Value {
+Expression: [Symbolic #-781894856755079923]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #-781894856755079923]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+64 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+80 -> (Crt:Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 0]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+16 -> (Crt:Some(Value {
+Expression: [Constant 6]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 6]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+864 -> (Crt:Some(Value {
+Expression: [Symbolic #7547979100121106446]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Symbolic #7547979100121106446]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+8 -> (Crt:Some(Value {
+Expression: [Constant 1]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+),Initital: Some(Value {
+Expression: [Constant 1]
+Type: GenericNumeric
+Constraints:
+	 
+} End Of Value Desc
+))
+
+} End Of Path Desc
