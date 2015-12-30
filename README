@@ -1,0 +1,35 @@
+Dumitrescu Evelina, Proiect Sisteme de incredere
+
+ am implementat UDPIPEncap intrucat am avut nevoie de incapsularea mesajelor
+DHCP
+
+- am adaugat variabile pt headerul DHCP in canonicalnames/package.scala;
+
+- am implementat CheckDHCPMsg, DHCPClassiffier, DHCPClient, DHCPServerOffer,
+  DHCPServerRelease
+     - nu am implementat nimic ce tine de DHCP state machine la server si la
+       client
+     - nu am implementat nimic ce tine de mesaje ICMP la server si la client :
+       DHCPICMPEncap si DHCPServerOffer pt mesajele ICMP ECHO REPLY si ICMP PING
+     - pt server am discutat la laborator sa nu mai implementez  DHCPLeaseHash,
+       DHCPLeasePool si DHCPServerACKorNAK
+     - pt DHCPClient am implementat trimiterea unui mesaj generic DHCP ce vine
+       de la client (OPCode = 1); din punctul meu de vedere aici este o limitare
+a Symnet  si nu vad cum as putea implementa un DHCP state machine pt trimiterea
+mesajelor discovery, request, renew, release etc
+   - pt CheckDHCPMsg am adaugat o variabila Magic si verific daca aceasta
+     variabila este corect setata (
+If(ConstrainRaw(Magic,:==:(ConstantValue(1666417251)))
+   - pt DHCPClassifier  am facut similar cu IPClassifier
+   - pt DHCPServerOffer  construiesc un header DHCP cu OPCode =2, Options = 2
+     (variabila Options contine tipul mesajului DHCP, optiunea 53 din header) si
+variabile YourIP ce contine IP-ul oferit de server clientului ( ip-ul este
+primit ca parametru  Assign(YourIP,
+ConstantValue(ipToNumber(configParams(0).value))))
+   - pt DHCPServerRelease am implementat un NoOP
+
+- am testat  pentru 2 exemple DHCPClient.click si DHCPServer.click;
+pt DHCPClient.click, in State.scala am construit un pachet DHCP
+ce va fi injectat la inceputul rularii
+
+- am adaugat 2 teste DHCPServerTests.scala si DHCPClientTests.scala
